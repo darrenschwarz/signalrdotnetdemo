@@ -22,7 +22,6 @@ namespace DNS.SignalR.Host
 
             WebApp.Start(url);
             Console.WriteLine("Server running on {0}", url);
-
         }
 
         //private static void Main(string[] args)
