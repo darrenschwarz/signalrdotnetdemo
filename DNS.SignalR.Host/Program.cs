@@ -12,7 +12,7 @@ namespace DNS.SignalR.Host
         /// The main entry point for the application.
         /// </summary>
         static void Main()
-        {
+        { 
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
@@ -21,7 +21,8 @@ namespace DNS.SignalR.Host
             ServiceBase.Run(ServicesToRun);
 
             WebApp.Start(url);
-            Console.WriteLine("Server running on {0}", url);
+
+            Console.WriteLine("Server is running on {0}", url);
         }
 
         //private static void Main(string[] args)
