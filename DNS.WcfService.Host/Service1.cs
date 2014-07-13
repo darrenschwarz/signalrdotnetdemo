@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ServiceProcess;
-using Microsoft.Owin.Hosting;
 
-namespace DNS.SignalR.Host
+namespace Dns.WcfService.Host
 {
     public partial class Service1 : ServiceBase
-    {     
+    {
         public Service1()
         {
             InitializeComponent();
@@ -13,7 +12,7 @@ namespace DNS.SignalR.Host
 
         protected override void OnStart(string[] args)
         {
-      
+            Console.WriteLine("Server running");            
         }
 
         protected override void OnStop()

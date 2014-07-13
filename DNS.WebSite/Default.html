@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Verification Service Spike</title>
+    <style type="text/css">
+        .container {
+            background-color: #99CCFF;
+            border: thick solid #808080;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+    <body>
+        <h1>SignalR Demo</h1>
+        <div class="container">
+            <ul id="messages"></ul>
+        </div>
+        <script src="Scripts/jquery-1.6.4.min.js"></script>
+        <script src="Scripts/jquery.signalR-2.0.3.min.js"></script>
+        <script src="http://localhost:8080/signalr/hubs"></script>
+        <script type="text/javascript">
+            $(function () {
+                $.connection.hub.url = "http://localhost:8080/signalr";
+                var signalRhub = $.connection.dnsSignalRDemoHub;
+                signalRhub.client.doSomething = function (message) {
+                    var encodedMsg = $('<div />').text(message).html();
+                    $('#messages').append('<li>' + encodedMsg + '</li>');
+                };
+                $.connection.hub.start().done(function () {
+
+                });
+            });
+        </script>
+    </body>
+</html>
