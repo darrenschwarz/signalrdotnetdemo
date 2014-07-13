@@ -11,29 +11,29 @@ namespace DNS.SignalR.Host
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        //static void Main()
-        //{ 
-        //    ServiceBase[] ServicesToRun;
-        //    ServicesToRun = new ServiceBase[] 
-        //    { 
-        //        new Service1() 
-        //    };
-        //    ServiceBase.Run(ServicesToRun);
-
-        //    WebApp.Start(url);
-
-        //    Console.WriteLine("Server is running on {0}", url);
-        //}
-
-        private static void Main(string[] args)
+        static void Main()
         {
-            WebApp.Start(url);
-            Console.WriteLine("Server running on {0}", url);
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[] 
+            { 
+                new Service1() 
+            };
+            ServiceBase.Run(ServicesToRun);
 
-            Console.WriteLine("Dns.SignalR.Host is running");
-            Console.WriteLine("Press <ENTER> to terminate");
-            Console.ReadKey(true);
+            WebApp.Start(url);
+
+            Console.WriteLine("Server is running on {0}", url);
         }
+
+        //private static void Main(string[] args)
+        //{
+        //    WebApp.Start(url);
+        //    Console.WriteLine("Server running on {0}", url);
+
+        //    Console.WriteLine("Dns.SignalR.Host is running");
+        //    Console.WriteLine("Press <ENTER> to terminate");
+        //    Console.ReadKey(true);
+        //}
 
     }
 }
