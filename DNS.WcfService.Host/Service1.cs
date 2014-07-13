@@ -83,26 +83,26 @@ namespace Dns.WcfService.Host
             {
                 using (var container = PopulateContainer(c, null))
                 {
-                    if (!IsValid(container, Logger))
-                    {
-                        Logger.Error("Container not valid.");
-                        if (Environment.UserInteractive)
-                        {
-                            Console.ReadKey(true);
-                        }
-                        return;
-                    }
-                    if (Environment.UserInteractive)
-                    {
-                        ((Service1)service).OnStart(null);
+                    //if (!IsValid(container, Logger))
+                    //{
+                    //    Logger.Error("Container not valid.");
+                    //    if (Environment.UserInteractive)
+                    //    {
+                    //        Console.ReadKey(true);
+                    //    }
+                    //    return;
+                    //}
+                    //if (Environment.UserInteractive)
+                    //{
+                    //    ((Service1)service).OnStart(null);
 
-                        Console.WriteLine("Dns.WcfService.Host is running.");
-                        Console.WriteLine("Press <ENTER> to terminate.");
-                        Console.ReadKey(true);
+                    //    Console.WriteLine("Dns.WcfService.Host is running.");
+                    //    Console.WriteLine("Press <ENTER> to terminate.");
+                    //    Console.ReadKey(true);
 
-                        ((Service1)service).OnStop();
-                    }
-                    else
+                    //    ((Service1)service).OnStop();
+                    //}
+                    //else
                         Run(service);
                 }
             }
