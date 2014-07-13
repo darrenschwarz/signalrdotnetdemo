@@ -11,5 +11,11 @@ namespace DNS.SignalR.Host.Tests
         {
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void TestsMoreNothing()
+        {
+            Assert.IsTrue(true);
+        }
     }
 }
