@@ -9,7 +9,7 @@ namespace DNS.SignalR.Host.Tests
         [Test]
         public void TestsNothing()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
     }
 }
