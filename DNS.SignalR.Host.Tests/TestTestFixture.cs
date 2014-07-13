@@ -10,7 +10,6 @@ namespace DNS.SignalR.Host.Tests
         public void TestsNothing()
         {
             Assert.IsTrue(true);
-            Assert.IsTrue(true);
         }
     }
 }
