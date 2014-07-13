@@ -13,13 +13,8 @@ using Castle.Windsor.Diagnostics;
 
 namespace Dns.WcfService.Host
 {
-    public partial class Service1 : BaseService<Service1>//ServiceBase
+    public class Service1 : BaseService<Service1>//ServiceBase
     {
-        //public Service1()
-        //{
-        //    InitializeComponent();
-        //}
-
         public static void Main()
         {
             BootstrapServiceContainer();
@@ -27,7 +22,7 @@ namespace Dns.WcfService.Host
 
         protected override void OnStart(string[] args)
         {
-            Console.WriteLine("Server running");            
+            //Console.WriteLine("Server running");            
         }
 
         protected override void OnStop()
