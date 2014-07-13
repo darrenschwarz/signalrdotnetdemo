@@ -34,7 +34,7 @@ namespace DNS.WcfService.TestClient
         private async static void DoSomething(IWcfService service)
         {
             var t = Task.Factory.StartNew(service.DoSomething);
-
+             
             await t;            
         }
 
