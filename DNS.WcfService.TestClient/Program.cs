@@ -24,7 +24,7 @@ namespace DNS.WcfService.TestClient
 
                     DoSomething(service);
 
-                    Console.WriteLine("Did something...");
+                    Console.WriteLine("Did something....");
                     Console.ReadKey(true);
 
                 }
