@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DNS.SignalR.Host.Tests
 {
-    public clss Class1
+    public class Class1
     {
     }
 }
