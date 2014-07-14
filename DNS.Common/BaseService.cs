@@ -6,7 +6,7 @@ using Castle.Core.Logging;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 
-namespace Dns.WcfService.Host
+namespace DNS.Common
 {
     public abstract class BaseService<T> : ServiceBase where T : BaseService<T>
     {

@@ -1,6 +1,6 @@
 using System.ServiceModel;
 
-namespace Dns.WcfService.Host
+namespace DNS.Common
 {
     public class WcfServiceException : FaultException
     {

@@ -17,11 +17,8 @@ namespace DNS.WcfService.TestClient
         {
             using (var c = BuildContainer())
             {
-<<<<<<< HEAD
                 Console.WriteLine("Client is running.");   
-=======
-                Console.WriteLine("Client is running.");  
->>>>>>> a80075ae61677bb50cab34f16b708ae8ae63b3ad
+
                 while (true)
                 {
                     var service = c.Resolve<IWcfService>();

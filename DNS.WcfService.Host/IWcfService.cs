@@ -1,5 +1,5 @@
 ﻿using System.ServiceModel;
-using System.Threading.Tasks;
+using DNS.Common;
 
 namespace Dns.WcfService.Host
 {

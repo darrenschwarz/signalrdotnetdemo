@@ -1,4 +1,4 @@
-namespace Dns.WcfService.Host
+﻿namespace DNS.Common
 {
     public interface IParameter
     {
