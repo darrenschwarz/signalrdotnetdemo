@@ -110,13 +110,13 @@ namespace Dns.WcfService.Host
             {
                 Logger.Error(aaiue.Message);
                 Logger.Error(aaiue.InnerException.Message);
-                Console.ReadLine();
+                //Console.ReadLine();
             }
             catch (Exception ex)
             {
                 Logger.Error(ex.Message, ex);
-                Console.WriteLine(ex.Message);
-                Console.ReadLine();
+                //Console.WriteLine(ex.Message);
+                //Console.ReadLine();
             } //NOTE [Darren,20140710] 
         }
 
@@ -136,7 +136,7 @@ namespace Dns.WcfService.Host
                         )));
 
 
-            container.Register(Component.For<IWindsorContainer>().Instance(container));
+            //container.Register(Component.For<IWindsorContainer>().Instance(container));
 
             return container;
         }
