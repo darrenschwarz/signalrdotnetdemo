@@ -8,7 +8,7 @@ namespace DNS.SignalR.Host
     {     
         public Service1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         protected override void OnStart(string[] args)
