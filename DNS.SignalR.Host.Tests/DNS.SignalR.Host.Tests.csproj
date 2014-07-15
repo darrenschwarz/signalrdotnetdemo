@@ -36,9 +36,6 @@
     <Reference Include="DNS.Common.Testing.Data">
       <HintPath>..\packages\DNS.Common.Testing.Data.1.1.105\lib\net45\DNS.Common.Testing.Data.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
