@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DNS.Common.Testing.Data">
+      <HintPath>..\packages\DNS.Common.Testing.Data.1.1.105\lib\net45\DNS.Common.Testing.Data.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -50,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Data\IntegersBetween0and10Inclusive.bson" />
+    <None Include="Data\IntegersBetween0and10Inclusive.metadata.json" />
+    <None Include="Data\system.indexes.bson" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +66,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\DNS.Common.Testing.Data.1.1.105\build\DNS.Common.Testing.Data.targets" Condition="Exists('..\packages\DNS.Common.Testing.Data.1.1.105\build\DNS.Common.Testing.Data.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
