@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DNS.Common.Mongo.Testing</id>
+        <title>DNS.Common.Mongo.Testing</title>
+        <authors>DNS</authors>
+        <owners>DNS</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Description</description>
+        <version>0.0.0.0</version>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.dll" target="lib\net451\DNS.Common.Mongo.Testing.dll" />
+        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.pdb" target="lib\net451\DNS.Common.Mongo.Testing.pdb" />
+        <file src="bin\$configuration$\mongorestore.exe" target="content\mongorestore.exe" />
+        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.targets" target="build\DNS.Common.Mongo.Testing.targets" />
+    </files>
+</package>
