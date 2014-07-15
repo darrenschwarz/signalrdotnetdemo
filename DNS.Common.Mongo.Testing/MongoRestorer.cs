@@ -30,10 +30,25 @@ namespace DNS.Common.Mongo.Testing
                     Arguments = string.Format("--drop --host {0} -d {1} {2}", host, database, dataDir)
                 };
 
+                string response = string.Empty;
 
                 using (var exeProcess = Process.Start(startInfo))
-                    exeProcess.WaitForExit();
+                {
+                    var lineVal = exeProcess.StandardOutput.ReadLine();
+                    while (lineVal != null)
+                    {
+                        response += lineVal;
+                        lineVal = exeProcess.StandardOutput.ReadLine();
+                    }
+                    lineVal = exeProcess.StandardError.ReadLine();
+                    while (lineVal != null)
+                    {
+                        response += lineVal;
 
+                        lineVal = exeProcess.StandardError.ReadLine();
+                    }
+                    exeProcess.WaitForExit();
+                }
                 return true;
             }
             catch (Exception ex)
@@ -57,5 +72,42 @@ namespace DNS.Common.Mongo.Testing
             var dataDirectory = Path.Combine(baseDir, dataDir);
             return Directory.GetFiles(dataDirectory).Any();
         }
+        //private string Execute(string workingDirectory, string arguments)
+        //{            
+        //    var startInfo = new ProcessStartInfo("git.exe")
+        //    {
+        //        UseShellExecute = false,
+        //        WorkingDirectory = workingDirectory,
+        //        RedirectStandardInput = true,
+        //        RedirectStandardOutput = true,
+        //        RedirectStandardError = true,
+        //        Arguments = arguments
+        //    };
+
+        //    var process = new Process
+        //    {
+        //        StartInfo = startInfo
+        //    };
+        //    process.Start();
+        //    var response = new GitCommandResponse();
+
+        //    var lineVal = process.StandardOutput.ReadLine();
+        //    while (lineVal != null)
+        //    {
+        //        response.Output.Add(lineVal);
+        //        lineVal = process.StandardOutput.ReadLine();
+        //    }
+        //    lineVal = process.StandardError.ReadLine();
+        //    while (lineVal != null)
+        //    {
+        //        response.Error.Add(lineVal);
+        //        lineVal = process.StandardError.ReadLine();
+        //    }
+
+        //    process.WaitForExit();
+        //    return response;
+        //}
+
+
     }
 }

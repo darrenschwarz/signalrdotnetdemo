@@ -1,5 +1,6 @@
 ﻿using System;
 using DNS.Common;
+using DNS.Common.Mongo.Testing;
 using NUnit.Framework;
 
 namespace DNS.SignalR.Host.Tests
@@ -22,8 +23,8 @@ namespace DNS.SignalR.Host.Tests
         [SetUp]
         public void SetUp()
         {
-            //if (!MongoRestorer.Restore(MongoHost, MongoDatabaseName, "Data"))
-            //    throw new Exception("Problem encountered restoring MongoDb.");
+            if (!MongoRestorer.Restore(MongoHost, MongoDatabaseName, "Data"))
+                throw new Exception("Problem encountered restoring MongoDb.");
         }
 
         [Test]
