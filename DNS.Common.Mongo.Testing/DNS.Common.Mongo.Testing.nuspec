@@ -10,8 +10,8 @@
         <version>0.0.0.0</version>
     </metadata>
     <files>
-        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.dll" target="lib\net451\DNS.Common.Mongo.Testing.dll" />
-        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.pdb" target="lib\net451\DNS.Common.Mongo.Testing.pdb" />
+        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.dll" target="lib\net45\DNS.Common.Mongo.Testing.dll" />
+        <file src="bin\$configuration$\DNS.Common.Mongo.Testing.pdb" target="lib\net45\DNS.Common.Mongo.Testing.pdb" />
         <file src="bin\$configuration$\mongorestore.exe" target="content\mongorestore.exe" />
         <file src="bin\$configuration$\DNS.Common.Mongo.Testing.targets" target="build\DNS.Common.Mongo.Testing.targets" />
     </files>
