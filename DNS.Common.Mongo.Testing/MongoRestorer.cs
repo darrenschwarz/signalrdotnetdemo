@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace DNS.Common.Mongo.Testing
 {
@@ -27,33 +28,27 @@ namespace DNS.Common.Mongo.Testing
                     UseShellExecute = false,
                     FileName = "mongorestore.exe",
                     WindowStyle = ProcessWindowStyle.Hidden,
-                    Arguments = string.Format("--drop --host {0} -d {1} {2}", host, database, dataDir)
+                    Arguments = string.Format("--drop --host {0} -d {1} {2}", host, database, dataDir),
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true
                 };
 
-                string response = string.Empty;
+                var response = new StringBuilder();                
 
                 using (var exeProcess = Process.Start(startInfo))
                 {
-                    var lineVal = exeProcess.StandardOutput.ReadLine();
-                    while (lineVal != null)
+                    while (exeProcess != null && !exeProcess.HasExited) //NOTE [Darren,20140715] modified as per http://stackoverflow.com/questions/1390559/how-to-get-the-output-of-a-system-diagnostics-process
                     {
-                        response += lineVal;
-                        lineVal = exeProcess.StandardOutput.ReadLine();
+                        response.Append(exeProcess.StandardOutput.ReadToEnd());
+                        response.Append(exeProcess.StandardError.ReadToEnd());
+                        //TODO [Darren,20140715] Add logging to this class?
                     }
-                    lineVal = exeProcess.StandardError.ReadLine();
-                    while (lineVal != null)
-                    {
-                        response += lineVal;
-
-                        lineVal = exeProcess.StandardError.ReadLine();
-                    }
-                    exeProcess.WaitForExit();
                 }
                 return true;
             }
             catch (Exception ex)
             {
-                Debug.Write(ex.Message);
+                Debug.Write(ex.Message); //TODO [Darren,20140715] Should worry about exception handling in utilities like this? Leave todo's sufficient?
                 return false;
             }
         }
@@ -72,42 +67,6 @@ namespace DNS.Common.Mongo.Testing
             var dataDirectory = Path.Combine(baseDir, dataDir);
             return Directory.GetFiles(dataDirectory).Any();
         }
-        //private string Execute(string workingDirectory, string arguments)
-        //{            
-        //    var startInfo = new ProcessStartInfo("git.exe")
-        //    {
-        //        UseShellExecute = false,
-        //        WorkingDirectory = workingDirectory,
-        //        RedirectStandardInput = true,
-        //        RedirectStandardOutput = true,
-        //        RedirectStandardError = true,
-        //        Arguments = arguments
-        //    };
-
-        //    var process = new Process
-        //    {
-        //        StartInfo = startInfo
-        //    };
-        //    process.Start();
-        //    var response = new GitCommandResponse();
-
-        //    var lineVal = process.StandardOutput.ReadLine();
-        //    while (lineVal != null)
-        //    {
-        //        response.Output.Add(lineVal);
-        //        lineVal = process.StandardOutput.ReadLine();
-        //    }
-        //    lineVal = process.StandardError.ReadLine();
-        //    while (lineVal != null)
-        //    {
-        //        response.Error.Add(lineVal);
-        //        lineVal = process.StandardError.ReadLine();
-        //    }
-
-        //    process.WaitForExit();
-        //    return response;
-        //}
-
-
+        
     }
 }

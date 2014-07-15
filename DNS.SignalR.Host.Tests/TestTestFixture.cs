@@ -23,20 +23,16 @@ namespace DNS.SignalR.Host.Tests
         [SetUp]
         public void SetUp()
         {
-            if (!MongoRestorer.Restore(MongoHost, MongoDatabaseName, "Data"))
-                throw new Exception("Problem encountered restoring MongoDb.");
+                
         }
 
         [Test]
-        public void TestsNothing()
+        public void MongoRestorer_Restores_IntegersBetween0and10Inclusive()
         {
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void TestsMoreNothing()
-        {
-            Assert.IsTrue(true);
+            //Arrange
+            //Act
+            //Assert
+            Assert.IsTrue(MongoRestorer.Restore(MongoHost, MongoDatabaseName, "Data")); //TODO [Darren,20140715] This currently only asserts there was no error, restore may not have happened            
         }
     }
 }
