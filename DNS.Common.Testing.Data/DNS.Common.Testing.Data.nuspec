@@ -3,8 +3,8 @@
     <metadata>
         <id>DNS.Common.Testing.Data</id>
         <title>DNS.Common.Testing.Data</title>
-        <authors>IRH</authors>
-        <owners>MrSite</owners>
+        <authors>DNS</authors>
+        <owners>DNS</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Description</description>
         <version>0.0.0.0</version>
