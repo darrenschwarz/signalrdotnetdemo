@@ -23,12 +23,14 @@ namespace Dns.WcfService.Host
 
         protected override void OnStart(string[] args)
         {
-            //Console.WriteLine("Server running");            
+            Logger.Debug("Service starting.");
+            Logger.Debug("Service started.");
         }
 
         protected override void OnStop()
         {
-
+            Logger.Debug("Service stopping.");
+            Logger.Debug("Service stopped.");
         }
 
         //private static IWindsorContainer PopulateContainer()
