@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace MrSite.Common.Mongo.Testing
+namespace DNS.Common.Mongo.Testing
 {
     public class MongoRestorer
     {
