@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DNS.Common.Testing.Data</id>
+        <title>DNS.Common.Testing.Data</title>
+        <authors>IRH</authors>
+        <owners>MrSite</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Description</description>
+        <version>0.0.0.0</version>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\DNS.Common.Testing.Data.dll" target="lib\net451\DNS.Common.Testing.Data.dll" />
+        <file src="bin\$configuration$\DNS.Common.Testing.Data.pdb" target="lib\net451\DNS.Common.Testing.Data.pdb" />
+        <file src="Data\**" target="content\Data" />
+        <file src="DNS.Common.Testing.Data.targets" target="build\DNS.Common.Testing.Data.targets" />
+    </files>
+</package>
