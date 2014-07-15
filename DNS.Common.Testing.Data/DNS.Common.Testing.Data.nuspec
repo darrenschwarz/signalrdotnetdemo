@@ -10,8 +10,8 @@
         <version>0.0.0.0</version>
     </metadata>
     <files>
-        <file src="bin\$configuration$\DNS.Common.Testing.Data.dll" target="lib\net451\DNS.Common.Testing.Data.dll" />
-        <file src="bin\$configuration$\DNS.Common.Testing.Data.pdb" target="lib\net451\DNS.Common.Testing.Data.pdb" />
+        <file src="bin\$configuration$\DNS.Common.Testing.Data.dll" target="lib\net45\DNS.Common.Testing.Data.dll" />
+        <file src="bin\$configuration$\DNS.Common.Testing.Data.pdb" target="lib\net45\DNS.Common.Testing.Data.pdb" />
         <file src="Data\**" target="content\Data" />
         <file src="DNS.Common.Testing.Data.targets" target="build\DNS.Common.Testing.Data.targets" />
     </files>
