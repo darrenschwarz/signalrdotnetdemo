@@ -1,1 +1,0 @@
-{ "options" : { "create" : "IntegersBetween0and10Inclusive" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "TestData.IntegersBetween0and10Inclusive", "name" : "_id_" } ] }
