@@ -11,7 +11,16 @@ namespace Dns.WcfService.Host
             var serverHub = hubConnection.CreateHubProxy("DnsSignalRDemoHub");
             hubConnection.Start().Wait();
 
-            var t = Task.Factory.StartNew(() => serverHub.Invoke("SendMessage", "Did something..."));
+            var t = Task.Factory.StartNew(() =>
+            {
+                for (var i = 0; i < 20; i++)
+                {
+                    var ii = i;
+
+                    serverHub.Invoke("SendMessage", string.Format("Did something...({0})", ii));    
+                }
+                                
+            });
             
             await t;
         }

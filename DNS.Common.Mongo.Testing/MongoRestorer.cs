@@ -14,7 +14,7 @@ namespace DNS.Common.Mongo.Testing
             {
                 if (string.IsNullOrEmpty(host)) throw new ArgumentNullException("host");
                 if (string.IsNullOrEmpty(database)) throw new ArgumentNullException("database");
-                if (string.IsNullOrEmpty(dataDir)) throw new ArgumentNullException("database");
+                if (string.IsNullOrEmpty(dataDir)) throw new ArgumentNullException("dataDir");
 
                 if (!DataDirectoryExists(dataDir))
                     throw new DirectoryNotFoundException("Data directory not found.");

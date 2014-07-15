@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DNS.Common.Mongo.Testing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DNS.Common.Mongo.Testing.1.1.118\lib\net45\DNS.Common.Mongo.Testing.dll</HintPath>
+    </Reference>
     <Reference Include="DNS.Common.Testing.Data">
       <HintPath>..\packages\DNS.Common.Testing.Data.1.1.105\lib\net45\DNS.Common.Testing.Data.dll</HintPath>
     </Reference>
@@ -59,18 +63,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DNS.Common.Mongo.Testing\DNS.Common.Mongo.Testing.csproj">
-      <Project>{97edfc70-fcbd-4710-a33c-d50da66ac979}</Project>
-      <Name>DNS.Common.Mongo.Testing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DNS.Common\DNS.Common.csproj">
       <Project>{77B93D14-279B-40FD-A792-445882CFE55A}</Project>
       <Name>DNS.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="mongorestore.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\packages\DNS.Common.Testing.Data.1.1.105\build\DNS.Common.Testing.Data.targets" Condition="Exists('..\packages\DNS.Common.Testing.Data.1.1.105\build\DNS.Common.Testing.Data.targets')" />
+  <Import Project="..\packages\DNS.Common.Mongo.Testing.1.1.118\build\DNS.Common.Mongo.Testing.targets" Condition="Exists('..\packages\DNS.Common.Mongo.Testing.1.1.118\build\DNS.Common.Mongo.Testing.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
